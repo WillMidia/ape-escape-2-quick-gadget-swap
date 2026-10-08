@@ -1,0 +1,39 @@
+gametitle=Ape Escape 2 (USA) [SLUS-20685]
+
+// Quick Gadget Swap restored from the Japanese release (Saru! Get You! 2, SCPS-15025).
+// The US build still contains the input handler, roulette update, HUD and close/assign code;
+// only the "open quick select" branch of func 0x2B4AE8 (JP 0x2ADED0) was stripped.
+// 0x2B4B10: bnez $s0 -> code cave; 0x2C6758..0x2C67C4: JP open-path (dead func reused as cave).
+
+[Quick Gadget Swap (restored from JP)]
+author=WillMidia (RE of SLUS-20685 vs SCPS-15025)
+description=Tap the face button of the gadget you are holding again to open the quick-select roulette; keep tapping to cycle (unowned gadgets are skipped). Use the gadget (right stick) or press R3 to confirm (swaps buttons if needed); press another face button to leave.
+patch=1,EE,002B4B10,word,16004711
+patch=1,EE,002C6758,word,82230B3E
+patch=1,EE,002C675C,word,14600018
+patch=1,EE,002C6760,word,24020001
+patch=1,EE,002C6764,word,3C02003B
+patch=1,EE,002C6768,word,2404001E
+patch=1,EE,002C676C,word,8C432118
+patch=1,EE,002C6770,word,10640013
+patch=1,EE,002C6774,word,24020001
+patch=1,EE,002C6778,word,8E230B0C
+patch=1,EE,002C677C,word,00121080
+patch=1,EE,002C6780,word,AE320B10
+patch=1,EE,002C6784,word,00511021
+patch=1,EE,002C6788,word,AE230B6C
+patch=1,EE,002C678C,word,24050001
+patch=1,EE,002C6790,word,AE320B0C
+patch=1,EE,002C6794,word,24040002
+patch=1,EE,002C6798,word,AE200B60
+patch=1,EE,002C679C,word,8C430AFC
+patch=1,EE,002C67A0,word,AE200B64
+patch=1,EE,002C67A4,word,A2250B3E
+patch=1,EE,002C67A8,word,AE230B70
+patch=1,EE,002C67AC,word,A2200B3F
+patch=1,EE,002C67B0,word,0C06DE70
+patch=1,EE,002C67B4,word,AE230B74
+patch=1,EE,002C67B8,word,080AD318
+patch=1,EE,002C67BC,word,0000102D
+patch=1,EE,002C67C0,word,080AD318
+patch=1,EE,002C67C4,word,00000000
